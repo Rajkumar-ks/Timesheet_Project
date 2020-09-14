@@ -1,0 +1,265 @@
+<div class="signup-form" id="register">
+    <form  method="post" >
+		<h2 style="color:black;">Registration Form</h2>
+		<p style="color:black;">Basic Info</p>
+		<hr>
+        <div class="form-group">
+			<div class="row">
+				<div class="col">
+                    <input 
+                    required 
+                    minlength="3" 
+                    maxlength="10" 
+                    pattern="" 
+                    ngModel name="firstName" 
+                    #firstName="ngModel" 
+                    (change)="log(firstName)" 
+                    id="firstName" type="text" 
+                    class="form-control" placeholder="First Name">
+                <div 
+                    class="alert alert-danger" 
+                    *ngIf="firstName.touched && !firstName.valid">
+                    <div *ngIf="firstName.errors.required">First Name is required!</div>
+                    <div *ngIf="firstName.errors.minlength">First Name should be minimum {{ firstName.errors.minlength.requiredLength }} characters</div>
+                    <div *ngIf="firstName.errors.pattern">First Name doesn't match the pattern</div>
+                </div>
+
+				</div>
+				<div class="col">
+                    <input 
+                    required 
+                    minlength="3" 
+                    maxlength="10" 
+                    pattern="" 
+                    ngModel name="lastName" 
+                    #lastName="ngModel" 
+                    (change)="log(lastName)" 
+                    id="lastName" type="text" 
+                    class="form-control" placeholder="Last Name">
+                <div 
+                    class="alert alert-danger" 
+                    *ngIf="lastName.touched && !lastName.valid">
+                    <div *ngIf="lastName.errors.required">Last Name is required!</div>
+                    <div *ngIf="lastName.errors.minlength">Last Name should be minimum {{ lastName.errors.minlength.requiredLength }} characters</div>
+                    <div *ngIf="lastName.errors.pattern">Last Name doesn't match the pattern</div>
+                </div>
+				</div>
+			</div>        	
+        </div>
+        <div class="form-group">
+        	<input 
+                required 
+                minlength="11" 
+                maxlength="30" 
+                pattern="" 
+                ngModel email name="emailId" 
+                #emailId="ngModel" 
+                (change)="log(emailId)" 
+                id="emailId" type="text" 
+                class="form-control" placeholder="Email">
+            <div 
+                class="alert alert-danger" 
+                *ngIf="emailId.touched && !emailId.valid">
+                <div *ngIf="emailId.errors.required">Email is required!</div>
+                <div *ngIf="emailId.errors.email">Email is invalid!</div>
+                <div *ngIf="emailId.errors.pattern">Email doesn't match the pattern</div>
+            </div>
+        </div>
+		<div class="form-group">
+			<div class="row">
+				<div class="col">
+                	<input 
+                    required
+                    minlength="10"
+                    maxlength="15"
+                    pattern = ""
+                    ngModel name = "mobileNumber"
+                    #mobileNumber = "ngModel"
+                    (change) = "log(mobileNumber)"
+                    id = "mobileNumber" 
+                    class="form-control"
+                    type="text" placeholder="Mobile Number">
+            
+                <div
+                    class="alert alert-danger"
+                    *ngIf = "mobileNumber.touched && !mobileNumber.valid">
+                    <div *ngIf="mobileNumber.errors.required">Mobile Number is required!</div>
+                    <div *ngIf="mobileNumber.errors.minlength">Mobile Number should be minimum {{mobileNumber.errors.minlength.requiredLength }} numbers</div>
+                </div>
+            	</div>
+            	<div class="col">
+                	<input 
+                        required
+                        minlength="10"
+                        maxlength="15"
+                        pattern = ""
+                        ngModel name = "alternativemobileNumber"
+                        #alternativemobileNumber = "ngModel"
+                        (change) = "log(alternativemobileNumber)"
+                        id = "alternativemobileNumber" 
+                        class="form-control"
+                        type="text" placeholder="Alternative Mobile Number">
+                
+                    <div
+                        class="alert alert-danger"
+                        *ngIf = "alternativemobileNumber.touched && !alternativemobileNumber.valid">
+                        <div *ngIf="alternativemobileNumber.errors.required">Mobile Number is required!</div>
+                        <div *ngIf="alternativemobileNumber.errors.minlength">Mobile Number should be minimum {{alternativemobileNumber.errors.minlength.requiredLength }} numbers</div>
+                    </div>
+                 </div>
+            </div>  
+         </div>
+         <div class="form-group" class="form-control">
+
+		    <div  class="form-check-inline">
+			  <label style="color:black;" class="form-check-label">
+			  	SEX:
+			  </label>
+			</div>
+		    <div class="form-check-inline">
+			  <label class="form-check-label">
+			    <input type="Radio" class="form-check-input" name="male_female">Male
+			  </label>
+			</div>
+			<div class="form-check-inline">
+			  <label class="form-check-label">
+			    <input type="Radio" class="form-check-input" name="male_female">Female
+			  </label>
+			</div>
+		</div>
+
+        <p style="color:black;">Carrier Info</p>
+        <hr>
+	    <div class="form-group">
+			<div class="row">
+				<div class="col">
+					<label>Date Of Joining:</label>
+                    <input 
+                    required
+                    ngModel name = "EmployeeJoiningDate"
+                    #EmployeeJoiningDate = "ngModel"
+                    (change) = "log(EmployeeJoiningDate)"
+                    id = "EmployeeJoiningDate"
+                    class = "form-control"
+                    type="date" placeholder="Date of Joining">
+                    <div
+                    class="alert alert-danger"
+                    *ngIf = "EmployeeJoiningDate.touched && !EmployeeJoiningDate.valid">
+                        <div *ngIf="EmployeeJoiningDate.errors.required">Employee Joining Date is required</div>
+                    </div>
+				</div>
+				<div class="col">
+					<label>Date Of Birth:</label>
+                    <input 
+                    required
+                    ngModel name = "DOB"
+                    #DOB = "ngModel"
+                    (change) = "log(DOB)"
+                    id = "DOB"
+                    class = "form-control"
+                    type="date" placeholder="Date of Birth">
+                    <div
+                    class="alert alert-danger"
+                    *ngIf = "DOB.touched && !DOB.valid">
+                        <div *ngIf="DOB.errors.required">Date of birth is required</div>
+                    </div>
+				</div>
+			</div>        	
+        </div>  
+       
+		
+        <div class="form-group">
+	        <label for="Jobs">Job Title:</label>
+
+			<select name="Jobs" id="Jobs" class="form-control">
+			  <option value="Associate Software Engineer">Associate Software Engineer</option>
+			  <option value="Software Engineer">Software Engineer</option>
+			  <option value="Senior Software Engineer">Senior Software Engineer</option>
+			  <option value="System Engineer">System Engineer</option>
+			</select>
+		</div>
+
+		<div class="form-group">
+			<div class="row">
+				<div class="col">
+			        <label for="YearsExperience">Years of Experience</label>
+                    <label>Date Of Birth:</label>
+                        <input 
+                        required
+                        ngModel name = "YearsExperience"
+                        #YearsExperience = "ngModel"
+                        (change) = "log(YearsExperience)"
+                        id = "YearsExperience"
+                        class = "form-control"
+                        type="text" placeholder="">
+                        <div
+                        class="alert alert-danger"
+                        *ngIf = "YearsExperience.touched && !YearsExperience.valid">
+                            <div *ngIf="YearsExperience.errors.required">Years of Experience is required</div>
+                        </div>
+				</div>
+				<div class="col">
+					 <label for="MonthsExperience">Experience of Month</label>
+                        <input 
+                        required
+                        ngModel name = "MonthsExperience"
+                        #MonthsExperience = "ngModel"
+                        (change) = "log(MonthsExperience)"
+                        id = "YearsExperience"
+                        class = "form-control"
+                        type="text" placeholder="">
+                        <div
+                        class="alert alert-danger"
+                        *ngIf = "MonthsExperience.touched && !YearsExperience.valid">
+                            <div *ngIf="MonthsExperience.errors.required">Month of Experience is required</div>
+                        </div>
+				</div>
+			</div>
+		</div>
+
+		<p style="color:black;">Educational Info</p>
+		<hr>
+		<div class="form-group">
+			<div class="row">
+				<div class="col">
+                    <label for="SchoolName">School Name</label>
+                    <input 
+                    required
+                    ngModel name = "SchoolName"
+                    #SchoolName = "ngModel"
+                    (change) = "log(SchoolName)"
+                    id = "SchoolName"
+                    class = "form-control"
+                    type="text" placeholder="">
+                    <div
+                    class="alert alert-danger"
+                    *ngIf = "SchoolName.touched && !SchoolName.valid">
+                        <div *ngIf="SchoolName.errors.required">School Name is required</div>
+                    </div>
+            	</div>
+            	<div class="col">
+                    <label for="SchoolPassedOut">School Passed Out</label>
+                    <input 
+                    required
+                    ngModel name = "SchoolPassedOut"
+                    #SchoolPassedOut = "ngModel"
+                    (change) = "log(SchoolPassedOut)"
+                    id = "SchoolPassedOut"
+                    class = "form-control"
+                    type="text" placeholder="">
+                    <div
+                    class="alert alert-danger"
+                    *ngIf = "SchoolPassedOut.touched && !SchoolName.valid">
+                        <div *ngIf="SchoolPassedOut.errors.required">School Passed Out is required</div>
+                    </div>
+                 </div>
+            </div>  
+         </div>
+
+		<div class="form-group">
+
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+        </div>
+    </form>
+	<!-- <div class="hint-text">Already have an account? <a href="#">Login here</a></div> -->
+</div>
